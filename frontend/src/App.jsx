@@ -1,11 +1,14 @@
-import FaceExpression from "./Feature/expression/pages/FaceExpression";
 import { ContextProvider } from "./Feature/expression/useContext";
+import { AuthProvider } from "./Feature/Auth/auth.context";
+import AuthRoute from "./routes";
 function App() {
   return (
     <>
-      <ContextProvider>
-        <FaceExpression />
-      </ContextProvider>
+      <AuthProvider>
+        <ContextProvider>
+          <AuthRoute />
+        </ContextProvider>
+      </AuthProvider>
     </>
   );
 }
